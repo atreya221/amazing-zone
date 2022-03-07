@@ -27,7 +27,7 @@ $select_query_result = mysqli_query($con , $select_query) or die(mysqli_error($c
 $num_rows = mysqli_num_rows($select_query_result);
 if($num_rows>0)
 {
-    header('location: signup.php?email_error= User already exists');
+    header('location: signup-supplier.php?email_error= User already exists');
 }
 else {
     $insert_user_query = "INSERT INTO users (role_id,email,password,name) VALUES(1,'$email','$password','$name')";
