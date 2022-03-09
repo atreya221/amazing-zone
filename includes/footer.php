@@ -1,4 +1,4 @@
-<footer class = "navbar navbar-fixed-bottom">
+<footer>
     <div class="container"> 
         <center> 
             <p>

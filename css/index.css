@@ -13,7 +13,25 @@ html, body {
 a {
     text-decoration: none;
     background-color: transparent;
-    color: #ededed;
+    color: #444040;
+}
+
+a:hover {
+    text-decoration: none;
+    background-color: transparent;
+    color: #000000;
+}
+
+a:active {
+    text-decoration: none;
+    background-color: transparent;
+    color: #1d1a1a;
+}
+
+a:visited {
+    text-decoration: none;
+    background-color: transparent;
+    color: #1d1a1a;
 }
 
 #banner_image {
