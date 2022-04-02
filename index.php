@@ -1,9 +1,10 @@
 <?php
 require 'includes/common.php';
 if (isset($_SESSION['email'])) 
-{ 
-    /*header('location: products.php'); */
+{
+    header('location: product-categories.php');
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,7 +27,7 @@ if (isset($_SESSION['email']))
             ?>
             <div id="banner_image">
 		<div id="container">
-                    
+                    <?php echo $_SESSION['role']; ?>
 		</div>
                 <div class="push"></div>
             </div>

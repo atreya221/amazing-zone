@@ -14,6 +14,7 @@
 		<link rel="stylesheet" type="text/css" href="css/index.css">
 		<script src="js/jquery-3.5.1.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+        <link rel="shortcut icon" type="image/x-icon" href="https://www.amazon.com/favicon.ico"/>
 	</head>
 
 	<body>
@@ -38,14 +39,7 @@
 							<h3>Automobile</h3>
 							<?php if (!isset($_SESSION['email'])) { ?> 
 							<p><a href="login.php" role="button" class="btn btn-primary btn-block">Buy Now</a></p> 
-							<?php } else { 
-								/*
-								if (check_if_added_to_cart(1)) {  
-									echo '<a href="#" class="btn btn-block btn-success" disabled>Added to cart</a>'; 
-								} 
-								else { ?> 
-							<a href="cart-add.php?id=1" name="add" value="add" class="btn btn-block btn-primary">Add to cart</a> 
-								<?php } */} ?>
+							<?php } ?>
 							</a>
 						</div>
 					</div>
@@ -59,13 +53,7 @@
 							<h3>Beauty Health & Fitness</h3>
 							<?php if (!isset($_SESSION['email'])) { ?> 
 							<p><a href="login.php" role="button" class="btn btn-primary btn-block">Buy Now</a></p> 
-							<?php } else { /*
-								if (check_if_added_to_cart(2)) {  
-									echo '<a href="#" class="btn btn-block btn-success" disabled>Added to cart</a>'; 
-								} 
-								else { ?> 
-							<a href="cart-add.php?id=2" name="add" value="add" class="btn btn-block btn-primary">Add to cart</a> 
-								<?php } */} ?>
+							<?php } ?>
 							</a>
 						</div>
 					</div>
@@ -79,13 +67,7 @@
 							<h3>Books</h3>
 							<?php if (!isset($_SESSION['email'])) { ?> 
 							<p><a href="login.php" role="button" class="btn btn-primary btn-block">Buy Now</a></p> 
-							<?php } else {/* 
-								if (check_if_added_to_cart(3)) {  
-									echo '<a href="#" class="btn btn-block btn-success" disabled>Added to cart</a>'; 
-								} 
-								else { ?> 
-							<a href="cart-add.php?id=3" name="add" value="add" class="btn btn-block btn-primary">Add to cart</a> 
-							<?php } */} ?>
+							<?php } ?>
 							</a>
 						</div>
 					</div>
@@ -99,13 +81,7 @@
 							<h3>Drinks</h3>
 							<?php if (!isset($_SESSION['email'])) { ?> 
 							<p><a href="login.php" role="button" class="btn btn-primary btn-block">Buy Now</a></p> 
-							<?php } else { /*
-								if (check_if_added_to_cart(4)) {  
-									echo '<a href="#" class="btn btn-block btn-success" disabled>Added to cart</a>'; 
-								} 
-								else { ?> 
-							<a href="cart-add.php?id=4" name="add" value="add" class="btn btn-block btn-primary">Add to cart</a> 
-								<?php } */} ?>
+							<?php } ?>
 							</a>
 						</div>
 					</div>
@@ -123,13 +99,7 @@
 							<h3>Electronics</h3>
 							<?php if (!isset($_SESSION['email'])) { ?> 
 							<p><a href="login.php" role="button" class="btn btn-primary btn-block">Buy Now</a></p> 
-							<?php } else { /*
-								if (check_if_added_to_cart(5)) {  
-									echo '<a href="#" class="btn btn-block btn-success" disabled>Added to cart</a>'; 
-								} 
-								else { ?> 
-							<a href="cart-add.php?id=5" name="add" value="add" class="btn btn-block btn-primary">Add to cart</a> 
-								<?php } */} ?>
+							<?php } ?>
 							</a>
 						</div>
 					</div>
@@ -143,13 +113,7 @@
 							<h3>Food</h3>
 							<?php if (!isset($_SESSION['email'])) { ?> 
 							<p><a href="login.php" role="button" class="btn btn-primary btn-block">Buy Now</a></p> 
-							<?php } else { /* 
-								if (check_if_added_to_cart(6)) {  
-									echo '<a href="#" class="btn btn-block btn-success" disabled>Added to cart</a>'; 
-								}
-								else { ?> 
-							<a href="cart-add.php?id=6" name="add" value="add" class="btn btn-block btn-primary">Add to cart</a> 
-								<?php } */} ?>
+							<?php } ?>
 						</a>
 						</div>
 					</div>
@@ -163,14 +127,7 @@
 							<h3>Home</h3>
 							<?php if (!isset($_SESSION['email'])) { ?> 
 							<p><a href="login.php" role="button" class="btn btn-primary btn-block">Buy Now</a></p> 
-							<?php } else { 
-								/*
-								if (check_if_added_to_cart(7)) {  
-									echo '<a href="#" class="btn btn-block btn-success" disabled>Added to cart</a>'; 
-								} 
-								else { ?> 
-							<a href="cart-add.php?id=7" name="add" value="add" class="btn btn-block btn-primary">Add to cart</a> 
-								<?php } */} ?>
+							<?php } ?>
 						</a>
 						</div>
 					</div>
@@ -184,13 +141,7 @@
 							<h3>Kids' Fashion</h3>
 							<?php if (!isset($_SESSION['email'])) { ?> 
 							<p><a href="login.php" role="button" class="btn btn-primary btn-block">Buy Now</a></p> 
-							<?php } else { /*
-								if (check_if_added_to_cart(8)) {  
-									echo '<a href="#" class="btn btn-block btn-success" disabled>Added to cart</a>'; 
-								} 
-								else { ?> 
-							<a href="cart-add.php?id=8" name="add" value="add" class="btn btn-block btn-primary">Add to cart</a> 
-								<?php } */} ?>
+							<?php } ?>
 						</a>
 						</div>
 					</div>
@@ -206,13 +157,7 @@
 							<h3>Men's Fashion</h3>
 							<?php if (!isset($_SESSION['email'])) { ?> 
 							<p><a href="login.php" role="button" class="btn btn-primary btn-block">Buy Now</a></p> 
-							<?php } else { /*
-								if (check_if_added_to_cart(9)) {  
-									echo '<a href="#" class="btn btn-block btn-success" disabled>Added to cart</a>'; 
-								} 
-								else { ?> 
-							<a href="cart-add.php?id=9" name="add" value="add" class="btn btn-block btn-primary">Add to cart</a> 
-								<?php } */} ?>
+							<?php } ?>
 						</a>
 						</div>
 					</div>
@@ -226,13 +171,7 @@
 							<h3>Sports</h3>
 							<?php if (!isset($_SESSION['email'])) { ?> 
 							<p><a href="login.php" role="button" class="btn btn-primary btn-block">Buy Now</a></p> 
-							<?php } else { /*
-								if (check_if_added_to_cart(10)) {  
-									echo '<a href="#" class="btn btn-block btn-success" disabled>Added to cart</a>'; 
-								} 
-								else { ?> 
-							<a href="cart-add.php?id=10" name="add" value="add" class="btn btn-block btn-primary">Add to cart</a> 
-								<?php } */} ?>
+							<?php } ?>
 						</a>
 						</div>
 					</div>
@@ -246,13 +185,7 @@
 							<h3>Toys & Baby Products</h3>
 							<?php if (!isset($_SESSION['email'])) { ?> 
 							<p><a href="login.php" role="button" class="btn btn-primary btn-block">Buy Now</a></p> 
-							<?php } else { /*
-								if (check_if_added_to_cart(11)) {  
-									echo '<a href="#" class="btn btn-block btn-success" disabled>Added to cart</a>'; 
-								} 
-								else { ?> 
-							<a href="cart-add.php?id=11" name="add" value="add" class="btn btn-block btn-primary">Add to cart</a> 
-								<?php } */} ?>
+							<?php } ?>
 						</a>
 						</div>
 					</div>
@@ -266,13 +199,7 @@
 							<h3>Women's Fashion</h3>
 							<?php if (!isset($_SESSION['email'])) { ?> 
 							<p><a href="login.php" role="button" class="btn btn-primary btn-block">Buy Now</a></p> 
-							<?php } else { /*
-								if (check_if_added_to_cart(12)) {  
-									echo '<a href="#" class="btn btn-block btn-success" disabled>Added to cart</a>'; 
-								} 
-								else { ?> 
-							<a href="cart-add.php?id=12" name="add" value="add" class="btn btn-block btn-primary">Add to cart</a> 
-								<?php } */} ?>
+							<?php } ?>
 						</a>
 						</div>
 					</div>

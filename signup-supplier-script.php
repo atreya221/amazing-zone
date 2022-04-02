@@ -47,7 +47,7 @@ else {
     $_SESSION['email'] = $email;
     $_SESSION['name'] = $name;
     $_SESSION['user_id'] = $user_id;
-    $_SESSION['supplier_id'] = $supplier_id;
+    $_SESSION['specific_id'] = $supplier_id;
 
     header('location: index.php');
 }

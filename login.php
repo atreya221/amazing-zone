@@ -36,7 +36,7 @@ if(isset($_SESSION['email']))
                     <?php }
                         else {
                     ?>
-                        <div class="panel panel-warning">
+                        <div class="panel panel-danger">
 						<div class="panel-heading">
 							<h5><strong><?php echo $_GET['login_error']."!"; ?></strong></h5>
 						</div>
