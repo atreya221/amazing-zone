@@ -47,11 +47,11 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="name">Full Name</label>
-                        <input type="text" class="form-control" id="name" value="<?php echo $user_row['name'] ?>" disabled>
+                        <input type="text" class="form-control" id="name" value="<?php echo $user_row['name'] ?>" disabled autocomplete="off">
                     </div>
                     <div class="form-group col-md-offset-2 col-md-4">
                         <label for="email">Email ID</label>
-                        <input type="email" class="form-control" id="email" value="<?php echo $user_row['email'] ?>" disabled>
+                        <input type="email" class="form-control" id="email" value="<?php echo $user_row['email'] ?>" disabled autocomplete="off">
                     </div>
                 </div>
                 <div class="form-row">
@@ -63,28 +63,30 @@
                     ?>
                         <div class="form-group col-md-4">
                             <label for="contact">Contact Number</label>
-                            <input type="text" class="form-control" id="contact" value="<?php echo $customer_row['contact_no']; ?>" disabled>
+                            <input type="text" class="form-control" id="contact" value="<?php echo $customer_row['contact_no']; ?>" disabled autocomplete="off">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="city">City</label>
-                            <input type="text" class="form-control" id="city" value="<?php echo $customer_row['city']; ?>" disabled>
+                            <input type="text" class="form-control" id="city" value="<?php echo $customer_row['city']; ?>" disabled autocomplete="off">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="country">Country</label>
-                            <input type="text" class="form-control" id="country" value="<?php echo $customer_row['country']; ?>" disabled>
+                            <input type="text" class="form-control" id="country" value="<?php echo $customer_row['country']; ?>" disabled autocomplete="off">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="address">Address</label>
-                            <input type="text" class="form-control" id="address" value="<?php echo $customer_row['address']; ?>" disabled>
+                            <input type="text" class="form-control" id="address" value="<?php echo $customer_row['address']; ?>" disabled autocomplete="off">
                         </div>
                     </div>
                     <div class="push"></div>
                     <div class="form-row" id="edit-row">
-                        <div class="form-group col-md-offset-5 col-md-2" id="edit">
-                            <div class="btn btn-primary" onclick="editCustomer()">Edit Details</div>
-                        </div>
+                        <center>
+                            <div class="form-group col-md-12" id="edit">
+                                <div class="btn btn-primary" onclick="editCustomer()">Edit Details</div>
+                            </div>
+                        </center>
                     </div>
                     <?php } else if($_SESSION['role'] == 1) { 
                         $supplier_id = $_SESSION['specific_id'];
@@ -94,24 +96,26 @@
                     ?>
                         <div class="form-group col-md-4">
                             <label for="contact">Contact Number</label>
-                            <input type="text" class="form-control" id="contact" value="<?php echo $supplier_row['contact_no']; ?>" disabled>
+                            <input type="text" class="form-control" id="contact" value="<?php echo $supplier_row['contact_no']; ?>" disabled autocomplete="off">
                         </div>
                         <div class="form-group col-md-offset-2 col-md-4">
                             <label for="license">License ID</label>
-                            <input type="text" class="form-control" id="license" value="<?php echo $supplier_row['license']; ?>" disabled>
+                            <input type="text" class="form-control" id="license" value="<?php echo $supplier_row['license']; ?>" disabled autocomplete="off">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="address">Address</label>
-                            <input type="text" class="form-control" id="address" value="<?php echo $supplier_row['address']; ?>" disabled>
+                            <input type="text" class="form-control" id="address" value="<?php echo $supplier_row['address']; ?>" disabled autocomplete="off">
                         </div>
                     </div>
                     <div class="push"></div>
                     <div class="form-row" id="edit-row">
-                        <div class="form-group col-md-offset-5 col-md-2" id="edit">
-                            <div class="btn btn-primary" onclick="editSupplier()">Edit Details</div>
-                        </div>
+                        <center>
+                            <div class="form-group col-md-12" id="edit">
+                                <div class="btn btn-primary" onclick="editSupplier()">Edit Details</div>
+                            </div>
+                        </center>
                     </div>
                     <?php } ?>
                 </form>
@@ -150,25 +154,36 @@
             }
             function restoreCustomer() {
                 document.getElementById("address").disabled = true;
+                document.getElementById("address").value = "<?php echo $customer_row['address']; ?>";
                 document.getElementById("contact").disabled = true;
+                document.getElementById("contact").value = "<?php echo $customer_row['contact_no']; ?>";
                 document.getElementById("city").disabled = true;
+                document.getElementById("city").value = "<?php echo $customer_row['city']; ?>";
                 document.getElementById("country").disabled = true;
+                document.getElementById("country").value = "<?php echo $customer_row['country']; ?>";
                 document.getElementById("name").disabled = true;
+                document.getElementById("name").value = "<?php echo $user_row['name']; ?>";
                 document.getElementById("email").disabled = true;
+                document.getElementById("email").value = "<?php echo $user_row['email']; ?>";
                 $( "#submit" ).remove();
                 $( "#cancel" ).remove();
-                newRow = '<div class="form-group col-md-offset-5 col-md-2" id="edit"><div class="btn btn-primary" onclick="editCustomer()">Edit Details</div></div>';
+                newRow = '<center><div class="form-group col-md-12" id="edit"><div class="btn btn-primary" onclick="editCustomer()">Edit Details</div></div></center>';
                 $('#edit-row').append(newRow);
             }
             function restoreSupplier() {
                 document.getElementById("address").disabled = true;
+                document.getElementById("address").value = "<?php echo $supplier_row['address']; ?>";
                 document.getElementById("contact").disabled = true;
+                document.getElementById("contact").value = "<?php echo $supplier_row['contact_no']; ?>";
                 document.getElementById("license").disabled = true;
+                document.getElementById("license").value = "<?php echo $supplier_row['license']; ?>";
                 document.getElementById("name").disabled = true;
+                document.getElementById("name").value = "<?php echo $user_row['name']; ?>";
                 document.getElementById("email").disabled = true;
+                document.getElementById("email").value = "<?php echo $user_row['email']; ?>";
                 $( "#submit" ).remove();
                 $( "#cancel" ).remove();
-                newRow = '<div class="form-group col-md-offset-5 col-md-2" id="edit"><div class="btn btn-primary" onclick="editSupplier()">Edit Details</div></div>';
+                newRow = '<center><div class="form-group col-md-12" id="edit"><div class="btn btn-primary" onclick="editSupplier()">Edit Details</div></div></center>';
                 $('#edit-row').append(newRow);
             }
         </script>
