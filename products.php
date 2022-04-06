@@ -134,20 +134,25 @@ if(!isset($_SESSION['email'])) {
                                 <th style="width: 100px;"><center>Original Price</center> </th>
                                 <th style="width: 100px;"><center>Discounted Price</center></th>
                                 <th style="width: 400px;"><center>Product Description</center></th>
-                                <th style="width: 100px;"><center>Update</center></th>
+                                <th style="width: 200px;"><center>Update</center></th>
 							</tr>
                             <?php   while($row = mysqli_fetch_array($sel_query_result)) { ?>
-                            <tr>
+                            <tr id="form-row">
                                 <form method="post" action="item-update.php?id=<?php echo $row['product_id'] ?>&cat=<?php echo $_GET['cat'] ?>">
 								<td><?php echo $count; ?></td>
 								<td><?php echo $row['product_name']; ?></td>
                                 <td><?php echo $row['brand']; ?></td>
-                                <td><input type="number" id="quantity" name="quantity" style="height: 32px;" size="6" min="1" value="<?php echo $row['stock'];?>" autocomplete="off"></td>
-								<td><input type="number" id="original_price" name="original_price" style="height: 32px;" size="6" min="1" value="<?php echo $row['original_price'];?>" autocomplete="off"></td>
-                                <td><input type="number" id="discounted_price" name="discounted_price" style="height: 32px;" size="6" min="1" value="<?php echo $row['discounted_price'];?>" autocomplete="off"></td>
-                                <td><textarea type="text" id="product_info" name="product_info" style="height: 32px;" autocomplete="off"><?php echo $row['product_info'];?></textarea></td>
-                                <td>  
-                                <input type="submit" value="Update" class="btn btn-primary">
+                                <td><input type="number" name="quantity" id="quantity-<?php echo $count ?>" style="height: 32px;" size="6" min="1" value="<?php echo $row['stock'];?>" autocomplete="off" disabled></td>
+								<td><input type="number" id="original_price-<?php echo $count ?>" name="original_price" style="height: 32px;" size="6" min="1" value="<?php echo $row['original_price'];?>" autocomplete="off" disabled></td>
+                                <td><input type="number" id="discounted_price-<?php echo $count ?>" name="discounted_price" style="height: 32px;" size="6" min="1" value="<?php echo $row['discounted_price'];?>" autocomplete="off" disabled></td>
+                                <td><textarea type="text" id="product_info-<?php echo $count ?>" name="product_info" style="height: 32px;" autocomplete="off" disabled><?php echo $row['product_info'];?></textarea></td>
+                                <td>
+                                <div class="form-group col-md-6" id="edit-<?php echo $count ?>">
+                                    <div class="btn btn-primary" id="edit-button-<?php echo $count ?>" onclick="edit(<?php echo $count; ?>)">Edit</div>
+                                </div>
+                                <div class="form-group col-md-6" id="update">
+                                    <input type="submit" value="Update" id="update-button-<?php echo $count ?>" class="btn btn-primary" disabled>
+                                </div>
                                 </td>
                                 </form>
 							</tr>
@@ -164,6 +169,28 @@ if(!isset($_SESSION['email'])) {
         <?php } ?>
 		
                 <?php include 'includes/footer.php'; ?>
-		
+		<script>
+            function edit(count) {
+                document.getElementById("quantity-"+count).disabled = false;
+                document.getElementById("original_price-"+count).disabled = false;
+                document.getElementById("discounted_price-"+count).disabled = false;
+                document.getElementById("product_info-"+count).disabled = false;
+                document.getElementById("update-button-"+count).disabled = false;
+                $( "#edit-button-"+count ).remove();
+                newButton = '<div class="btn btn-danger" id="cancel-button-'+count+'" onclick="cancel(' + count + ')">Cancel</div>';
+                $("#edit-"+count).append(newButton);
+            }
+
+            function cancel(count) {
+                document.getElementById("quantity-"+count).disabled = true;
+                document.getElementById("original_price-"+count).disabled = true;
+                document.getElementById("discounted_price-"+count).disabled = true;
+                document.getElementById("product_info-"+count).disabled = true;
+                document.getElementById("update-button-"+count).disabled = true;
+                $( "#cancel-button-"+count ).remove();
+                newButton = '<div class="btn btn-primary" id="edit-button-'+count+'" onclick="edit('+count+')">Edit</div>';
+                $("#edit-"+count).append(newButton);                
+            }
+        </script>
 	</body>
 </html>

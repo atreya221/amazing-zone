@@ -46,6 +46,7 @@ else {
 
     $_SESSION['email'] = $email;
     $_SESSION['name'] = $name;
+    $_SESSION['role'] = 1;
     $_SESSION['user_id'] = $user_id;
     $_SESSION['specific_id'] = $supplier_id;
 
