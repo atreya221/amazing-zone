@@ -37,6 +37,13 @@
         <section>
           <div class="container">
             <h4 style="line-height: 50px;"><strong>Details of User account</strong></h4>
+            <?php if(isset($_GET['update_msg'])) {
+                    echo"<div class='panel panel-success'>
+						<div class='panel-heading'>
+							<p>".$_GET['update_msg']."</p>
+						</div></div>"; 
+                                    
+            }?>
             <?php
                 $user_id = $_SESSION['user_id'];
                 $select_user_query = "SELECT * FROM users WHERE user_id = $user_id";
@@ -47,11 +54,11 @@
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <label for="name">Full Name</label>
-                        <input type="text" class="form-control" id="name" value="<?php echo $user_row['name'] ?>" disabled autocomplete="off">
+                        <input type="text" class="form-control" name="name" id="name" value="<?php echo $user_row['name'] ?>" disabled autocomplete="off">
                     </div>
                     <div class="form-group col-md-offset-2 col-md-4">
                         <label for="email">Email ID</label>
-                        <input type="email" class="form-control" id="email" value="<?php echo $user_row['email'] ?>" disabled autocomplete="off">
+                        <input type="email" class="form-control" name="email" id="email" value="<?php echo $user_row['email'] ?>" disabled autocomplete="off">
                     </div>
                 </div>
                 <div class="form-row">
@@ -63,21 +70,21 @@
                     ?>
                         <div class="form-group col-md-4">
                             <label for="contact">Contact Number</label>
-                            <input type="text" class="form-control" id="contact" value="<?php echo $customer_row['contact_no']; ?>" disabled autocomplete="off">
+                            <input type="text" class="form-control" name="contact" id="contact" pattern="[0-9]{10}" value="<?php echo $customer_row['contact_no']; ?>" disabled autocomplete="off">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="city">City</label>
-                            <input type="text" class="form-control" id="city" value="<?php echo $customer_row['city']; ?>" disabled autocomplete="off">
+                            <input type="text" class="form-control" name="city" id="city" value="<?php echo $customer_row['city']; ?>" disabled autocomplete="off">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="country">Country</label>
-                            <input type="text" class="form-control" id="country" value="<?php echo $customer_row['country']; ?>" disabled autocomplete="off">
+                            <input type="text" class="form-control" name="country" id="country" value="<?php echo $customer_row['country']; ?>" disabled autocomplete="off">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="address">Address</label>
-                            <input type="text" class="form-control" id="address" value="<?php echo $customer_row['address']; ?>" disabled autocomplete="off">
+                            <input type="text" class="form-control" name="address" id="address" value="<?php echo $customer_row['address']; ?>" disabled autocomplete="off">
                         </div>
                     </div>
                     <div class="push"></div>
@@ -96,17 +103,17 @@
                     ?>
                         <div class="form-group col-md-4">
                             <label for="contact">Contact Number</label>
-                            <input type="text" class="form-control" id="contact" value="<?php echo $supplier_row['contact_no']; ?>" disabled autocomplete="off">
+                            <input type="text" class="form-control" name="contact" id="contact" pattern="[0-9]{10}" value="<?php echo $supplier_row['contact_no']; ?>" disabled autocomplete="off">
                         </div>
                         <div class="form-group col-md-offset-2 col-md-4">
                             <label for="license">License ID</label>
-                            <input type="text" class="form-control" id="license" value="<?php echo $supplier_row['license']; ?>" disabled autocomplete="off">
+                            <input type="text" class="form-control" name="license" id="license" value="<?php echo $supplier_row['license']; ?>" disabled autocomplete="off">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="address">Address</label>
-                            <input type="text" class="form-control" id="address" value="<?php echo $supplier_row['address']; ?>" disabled autocomplete="off">
+                            <input type="text" class="form-control" id="address" name="address" value="<?php echo $supplier_row['address']; ?>" disabled autocomplete="off">
                         </div>
                     </div>
                     <div class="push"></div>

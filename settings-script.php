@@ -1,30 +1,37 @@
 <?php
-    require 'includes/common.php';
-    if(!isset($_SESSION['email']))
-    {
+    include 'includes/common.php';
+    if(!isset($_SESSION['email'])) {
         header('location: index.php');
     }
     $user_id = $_SESSION['user_id'];
-    $oldpassword = md5($_POST['oldpassword']);
-    $newpassword = md5($_POST['newpassword']);
-    $renewpassword = md5($_POST['renewpassword']);
-    
-    $select_password = "SELECT u.password FROM users u WHERE u.id = '$user_id'";
-    $query_result = mysqli_query($con,$select_password) or die(mysqli_error($con));
-    $row = mysqli_fetch_array($query_result);
-    if($row['password']!=$oldpassword)
-    {
-        header("location: settings.php?password_error= Enter correct password");
+    $role_id = $_SESSION['role'];
+    if ( $role_id == 0) {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $contact_no = $_POST['contact'];
+        $city = $_POST['city'];
+        $country = $_POST['country'];
+        $address = $_POST['address'];
+        echo $name;
+        $update_user_query = "UPDATE users SET name = '$name', email = '$email' WHERE user_id = $user_id";
+        $update_customer_query = "UPDATE customers SET contact_no = '$contact_no', city = '$city', country = '$country', address = '$address' WHERE user_id = $user_id";
+        $update_user_query_result = mysqli_query($con , $update_user_query) or die(mysqli_error($con));
+        $update_customer_query_result = mysqli_query($con , $update_customer_query) or die (mysqli_error($con));
+        header("location: settings.php?update_msg=User details updated successfully!");
+    } else {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $contact_no = $_POST['contact'];
+        $license = $_POST['license'];
+        $address = $_POST['address'];
+        echo $name;
+        $update_user_query = "UPDATE users SET name = '$name', email = '$email' WHERE user_id = $user_id";
+        $update_supplier_query = "UPDATE suppliers SET contact_no = '$contact_no', license = '$license', address = '$address' WHERE user_id = $user_id";
+        $update_user_query_result = mysqli_query($con , $update_user_query) or die(mysqli_error($con));
+        $update_supplier_query_result = mysqli_query($con , $update_supplier_query) or die (mysqli_error($con));
+        header("location: settings.php?update_msg=User details updated successfully!");
     }
-    else {
-        if($newpassword!=$renewpassword)
-        {
-            header('location: settings.php?passwordmatch_error= Passwords do not match');
-        }
-        else {
-            $password_change_query = "UPDATE users u SET u.password='$newpassword' WHERE u.id='$user_id'";
-            $query_result_2 = mysqli_query($con,$password_change_query) or die(mysqli_error($con));
-            header('location: settings.php?success_message= Your password has been updated successfully');
-        }
-    }
+
+?>
+
     
