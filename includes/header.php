@@ -10,7 +10,9 @@
         <div class="collapse navbar-collapse" id="myNavbar"> 
             <ul class="nav navbar-nav navbar-right"> 
                 <?php if (isset($_SESSION['email'])) { ?> 
+                <?php if($_SESSION['role'] == 0) { ?>
                 <li><a href = "cart.php"><span class = "glyphicon glyphicon-shopping-cart"></span> Cart </a></li> 
+                <?php } ?>
                 <li><a href = "settings.php"><span class = "glyphicon glyphicon-user"></span> Settings</a></li> 
                 <li><a href = "logout-script.php"><span class = "glyphicon glyphicon-log-in"></span> Logout</a></li> 
                 <?php } else { ?> 
