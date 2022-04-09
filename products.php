@@ -31,7 +31,7 @@ if(!isset($_SESSION['email'])) {
 						
                         <?php 
                             $cat_id = $_GET['cat'];
-                            echo $cat_id;
+    
                             $sel_query = "SELECT * FROM products WHERE category_id = $cat_id";
                             $sel_query_result = mysqli_query($con,$sel_query);
                             $num_rows = mysqli_num_rows($sel_query_result);
@@ -116,7 +116,6 @@ if(!isset($_SESSION['email'])) {
                         <?php 
                             $cat_id = $_GET['cat'];
                             $supplier_id = $_SESSION['specific_id'];
-                            echo $supplier_id;
                             $sel_query = "SELECT * FROM products WHERE category_id = $cat_id AND supplier_id = $supplier_id";
                             $sel_query_result = mysqli_query($con,$sel_query);
                             $num_rows = mysqli_num_rows($sel_query_result);

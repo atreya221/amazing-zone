@@ -27,12 +27,14 @@ if (isset($_SESSION['email']))
             ?>
             <div id="banner_image">
 		<div id="container">
-                    <?php echo $_SESSION['role']; ?>
+                    <div id="banner_content">
+			<h1 style="margin-bottom: 50px;">AMAZING ZONE</h1>
+                        <a href="products.php" class="btn btn-danger btn-lg active">Shop Now</a>
+                    </div>
 		</div>
                 <div class="push"></div>
             </div>
-            <?php
-                include 'includes/footer.php';
-            ?>
+            
+            <?php include 'includes/footer.php'; ?>
 	</body>
 </html>
