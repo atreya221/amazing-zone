@@ -52,7 +52,7 @@ if(!isset($_SESSION['email'])) {
                                 <th style="width: 50px;"><center>Quantity</center></th>
                                 <th style="width: 100px;"><center>Status</center></th>
 							</tr>
-                            <?php   while($row = mysqli_fetch_array($sel_query_result)) { echo $count;?>
+                            <?php   while($row = mysqli_fetch_array($sel_query_result)) { ?>
                             <tr>
 								<td><?php echo $count; ?></td>
 								<td><?php echo $row['product_name']; ?></td>
